@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}My Shifts{% endblock %}
+{% block content %}
+<h1>Your shifts</h1>
+{% if rows %}
+<div class="table-wrap">
+  <table>
+    <caption>Shifts for the email you entered</caption>
+    <thead>
+      <tr><th scope="col">Name</th><th scope="col">Email</th><th scope="col">When</th><th scope="col">Task</th></tr>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+      <tr>
+        <td>{{ row.first_name }}</td>
+        <td>{{ row.email }}</td>
+        <td>Week {{ row.week }}, {{ row.day }}, {{ row.start_time }}</td>
+        <td>{{ row.task }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<p>No shifts found for {{ email }}. Check the spelling, or sign up for a shift first.</p>
+{% endif %}
+<p><a href="{{ url_for('index') }}">Back to all shifts</a></p>
+{% endblock %}

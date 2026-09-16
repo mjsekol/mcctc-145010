@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Front Desk Checkout{% endblock %}</title>
+  <style>
+    body { margin: 0; font-family: system-ui, sans-serif; font-size: 1.125rem; line-height: 1.5; color: #111111; background: #ffffff; }
+    .skip { position: absolute; left: -999px; }
+    .skip:focus { left: 1rem; top: 1rem; background: #ffffff; padding: 0.5rem; }
+    header { background: #233452; color: #ffffff; padding: 1rem; }
+    header p { margin: 0; font-size: 1.5rem; font-weight: 700; }
+    nav ul { list-style: none; margin: 0.5rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 1rem; }
+    nav a { color: #ffffff; }
+    main { max-width: 48rem; margin: 0 auto; padding: 1rem; }
+    .message { border: 2px solid #233452; padding: 0.75rem; margin: 0 0 1rem; }
+    .items { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+    .items li { border: 1px solid #555555; border-radius: 0.5rem; padding: 1rem; }
+    .items h2 { margin: 0 0 0.25rem; font-size: 1.25rem; }
+    .items p { margin: 0 0 0.75rem; }
+    form { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+    select, button { font: inherit; padding: 0.5rem 0.75rem; min-height: 2.75rem; }
+    button { border: 0; border-radius: 0.375rem; color: #ffffff; cursor: pointer; }
+    .btn-out { background: #1d6b36; }
+    .btn-in { background: #233452; }
+    button:focus-visible, select:focus-visible, a:focus-visible { outline: 3px solid #b0001d; outline-offset: 2px; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .history li { margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to the item list</a>
+  <header>
+    <p>Front Desk Checkout</p>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="{{ url_for('index') }}">Items</a></li>
+        <li><a href="{{ url_for('history') }}">History</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    {% for message in get_flashed_messages() %}
+    <p class="message" role="status">{{ message }}</p>
+    {% endfor %}
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

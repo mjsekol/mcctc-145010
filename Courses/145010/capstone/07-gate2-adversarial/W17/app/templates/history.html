@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}History · Front Desk Checkout{% endblock %}
+{% block content %}
+<h1>History</h1>
+<p>The {{ limit }} most recent check-outs and check-ins, newest first.</p>
+{% if rows %}
+<ol class="history">
+  {% for row in rows %}
+  <li><strong>{{ row.name }}</strong>
+    {% if row.action == 'out' %}checked out to{% else %}checked in from{% endif %}
+    {{ row.group_name }}, {{ row.at }}</li>
+  {% endfor %}
+</ol>
+{% else %}
+<p>Nothing has been checked out yet.</p>
+{% endif %}
+{% endblock %}

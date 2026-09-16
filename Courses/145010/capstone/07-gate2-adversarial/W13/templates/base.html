@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Volunteer Shifts{% endblock %} · Maple Street Food Pantry</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #1c1c1c; background: #ffffff; line-height: 1.5; }
+    header { padding: 14px 20px; background: #1f4d2e; color: #ffffff; }
+    header .org { margin: 0; font-size: 1.25rem; font-weight: bold; }
+    nav ul { display: flex; flex-wrap: wrap; gap: 16px; margin: 6px 0 0; padding: 0; list-style: none; }
+    nav a { color: #ffffff; }
+    main { max-width: 820px; margin: 0 auto; padding: 20px; }
+    h1, h2 { color: #1f4d2e; }
+    .message { padding: 10px 14px; border-left: 6px solid #1f4d2e; background: #eef6f0; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    caption { text-align: left; padding-bottom: 6px; }
+    th, td { padding: 8px; text-align: left; border-bottom: 1px solid #c8c8c8; }
+    thead th { background: #eef6f0; }
+    .stack { display: grid; gap: 14px; max-width: 460px; }
+    .field { display: grid; gap: 4px; }
+    .field-name, label { font-weight: bold; }
+    input, select { width: 100%; font: inherit; padding: 8px; border: 1px solid #6b6b6b; border-radius: 6px; }
+    button { justify-self: start; font: inherit; font-weight: bold; padding: 10px 18px; border: 0; border-radius: 6px; background: #1f4d2e; color: #ffffff; cursor: pointer; }
+    footer { margin-top: 32px; padding: 14px 20px; background: #eef6f0; }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="org">Maple Street Food Pantry</p>
+    <nav aria-label="Site">
+      <ul>
+        <li><a href="{{ url_for('index') }}">Shifts</a></li>
+        <li><a href="{{ url_for('index') }}#my-shifts">My shifts</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  <footer>
+    <p>Questions about a shift? Call the pantry coordinator during open hours.</p>
+  </footer>
+</body>
+</html>

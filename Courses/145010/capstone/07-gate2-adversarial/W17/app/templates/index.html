@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Items · Front Desk Checkout{% endblock %}
+{% block content %}
+<h1>Shared items</h1>
+<p>{{ items|length }} items. {{ out_count }} checked out.</p>
+<ul class="items">
+  {% for item in items %}
+  <li>
+    <h2>{{ item.name }}</h2>
+    {% if item.group_name %}
+    <p><strong>Checked out</strong> to {{ item.group_name }}. Due back {{ item.due }}.</p>
+    <form method="post" action="{{ url_for('checkin', item_id=item.id) }}">
+      <button class="btn-in" type="submit">Check in<span class="visually-hidden"> {{ item.name }}</span></button>
+    </form>
+    {% else %}
+    <p><strong>On the shelf</strong></p>
+    <form method="post" action="{{ url_for('checkout', item_id=item.id) }}">
+      <label for="group-{{ item.id }}">Group</label>
+      <select id="group-{{ item.id }}" name="group" required>
+        <option value="">Choose a group</option>
+        {% for group in groups %}
+        <option>{{ group }}</option>
+        {% endfor %}
+      </select>
+      <button class="btn-out" type="submit">Check out<span class="visually-hidden"> {{ item.name }}</span></button>
+    </form>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

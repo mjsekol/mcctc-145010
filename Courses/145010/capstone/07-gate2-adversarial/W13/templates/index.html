@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Volunteer Shifts{% endblock %}
+{% block content %}
+<h1>Volunteer shifts</h1>
+<p>Pick a shift that fits your week. Each shift needs a set number of people, and a full shift cannot take more.</p>
+
+{% if message %}
+<p class="message" role="status">{{ message }}</p>
+{% endif %}
+
+<h2>Upcoming shifts</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Every upcoming shift and the spots left on it</caption>
+    <thead>
+      <tr><th scope="col">When</th><th scope="col">Task</th><th scope="col">Spots left</th></tr>
+    </thead>
+    <tbody>
+      {% for shift in shifts %}
+      <tr>
+        <td>Week {{ shift.week }}, {{ shift.day }}, {{ shift.start_time }}</td>
+        <td>{{ shift.task }}</td>
+        <td>{{ shift.spots_left }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<h2 id="sign-up">Sign up for a shift</h2>
+<form class="stack" action="{{ url_for('signup') }}" method="post">
+  <div class="field">
+    <span class="field-name">First name</span>
+    <input type="text" name="first_name" autocomplete="given-name" maxlength="40" required>
+  </div>
+  <div class="field">
+    <span class="field-name">Email</span>
+    <input type="email" name="email" autocomplete="email" maxlength="120" required>
+  </div>
+  <div class="field">
+    <span class="field-name">Shift</span>
+    <select name="shift_id" required>
+      {% for shift in shifts %}
+      <option value="{{ shift.id }}">Week {{ shift.week }}, {{ shift.day }}, {{ shift.start_time }}, {{ shift.task }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <button type="submit">Sign me up</button>
+</form>
+
+<h2 id="my-shifts">Check my shifts</h2>
+<form class="stack" action="{{ url_for('my_shifts') }}" method="post">
+  <div class="field">
+    <label for="lookup-email">The email you signed up with</label>
+    <input type="email" id="lookup-email" name="email" autocomplete="email" maxlength="120" required>
+  </div>
+  <button type="submit">Show my shifts</button>
+</form>
+{% endblock %}
