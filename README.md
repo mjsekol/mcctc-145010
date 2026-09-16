@@ -153,6 +153,11 @@ Your toolchain from the first three courses still applies. This course adds:
 - **A local web server** to test your pages the way a visitor sees them. Python's built-in
   one works: `python -m http.server`.
 - **A screen reader.** Windows Narrator is built in.
+- **The page checker**, in `tools/web-check/`. It validates your HTML, audits accessibility,
+  and checks for sideways scrolling at three widths. You set it up in Week 1. See
+  [tools/web-check/README.md](tools/web-check/README.md).
+- **Flask**, the same Python web framework you used in 145130, for the Week 5 forms and any
+  capstone with a server.
 
 Hosting and design tools for the capstone are set up by your instructor. Nothing here
 requires an AI account, an API key, or a credit card, and nothing you write should ever
