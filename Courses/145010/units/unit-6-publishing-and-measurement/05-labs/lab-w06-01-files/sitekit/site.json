@@ -1,0 +1,6 @@
+{
+  "site_name": "My Web Portfolio",
+  "base_url": "",
+  "language": "en",
+  "nav": ["index", "document", "layout"]
+}

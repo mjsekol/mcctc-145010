@@ -1,0 +1,86 @@
+/* style.css: one stylesheet for every page, attached once, in the template. */
+:root {
+  --navy: #233452;
+  --blue-dark: #1b5e9e;   /* a darker blue than the brand blue, so link text passes contrast */
+  --text: #111111;
+  --muted: #4a4a4a;
+  --fill: #eef4fb;
+  --rule: #c7daf0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background: #ffffff;
+}
+
+a { color: var(--blue-dark); }
+a:hover, a:focus { color: var(--navy); text-decoration-thickness: 3px; }
+
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 1rem; top: 1rem; background: #ffffff; padding: 0.5rem; z-index: 10; }
+
+.site-header {
+  background: var(--navy);
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+}
+.site-header a { color: #ffffff; }
+.site-name { margin: 0; font-weight: 700; }
+.nav { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }
+.nav a { text-decoration: none; padding: 0.25rem 0; display: inline-block; }
+.nav a[aria-current="page"] { border-bottom: 3px solid #ffffff; }
+
+main, .helpful, .site-footer { max-width: 60rem; margin: 0 auto; padding: 1rem; }
+
+h1 { color: var(--navy); line-height: 1.2; }
+h2 { color: var(--navy); }
+
+img, video { max-width: 100%; height: auto; }
+
+.float-right { float: right; width: 40%; margin: 0 0 1rem 1rem; }
+.clear { clear: both; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; padding: 0; list-style: none; }
+.card { border: 1px solid var(--rule); border-radius: 0.5rem; padding: 1rem; background: var(--fill); }
+.card h3 { margin-top: 0; }
+
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid var(--rule); padding: 0.4rem 0.6rem; text-align: left; }
+th { background: var(--navy); color: #ffffff; }
+.table-wrap { overflow-x: auto; }
+
+form.widget { display: grid; gap: 0.75rem; max-width: 24rem; }
+label { font-weight: 600; }
+input[type="number"] { font: inherit; padding: 0.4rem; width: 8rem; }
+
+button {
+  font: inherit;
+  background: var(--navy);
+  color: #ffffff;
+  border: 0;
+  border-radius: 0.35rem;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+}
+button:hover, button:focus { background: var(--blue-dark); }
+button:disabled { background: #6b6b6b; cursor: default; }
+
+.helpful { border-top: 1px solid var(--rule); }
+.helpful form { display: flex; gap: 0.75rem; }
+.small { font-size: 0.9rem; color: var(--muted); }
+
+.site-footer { border-top: 1px solid var(--rule); color: var(--muted); }
+
+@media (max-width: 40rem) {
+  .float-right { float: none; width: 100%; margin: 0 0 1rem 0; }
+}

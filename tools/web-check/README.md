@@ -77,5 +77,7 @@ PASS  index.html
 A `FAIL` lists every problem with its line number or the element it found. The exit code is 0
 only when every page passes, so you can use it in a script.
 
-**Two rules are switched off on purpose.** A lowercase `<!doctype html>` is valid, and Week 2
-teaches inline styles, so neither is reported.
+**Three choices are made on purpose.** A lowercase `<!doctype html>` is valid, and Week 2
+teaches inline styles, so neither is reported. A group of checkboxes may share one `name`, the
+same as radio buttons, because the HTML standard allows it. Two text fields with the same name
+are still reported.

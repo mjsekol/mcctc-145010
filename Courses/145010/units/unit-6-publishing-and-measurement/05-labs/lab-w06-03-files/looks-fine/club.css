@@ -1,0 +1,12 @@
+/* club.css: styles for the robotics club page */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, "Segoe UI", Arial, sans-serif; line-height: 1.5; color: #111111; }
+.top { background: #233452; color: #ffffff; padding: 0.75rem 1rem; }
+.brand { margin: 0; font-weight: 700; }
+main, .bottom { max-width: 50rem; margin: 0 auto; padding: 1rem; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; }
+.card { display: block; border: 1px solid #c7daf0; border-radius: 0.5rem; padding: 1rem; color: #111111; text-decoration: none; background: #eef4fb; }
+.card:hover, .card:focus { border-color: #233452; }
+a { color: #1b5e9e; }
+img { max-width: 100%; height: auto; }
+.bottom { border-top: 1px solid #c7daf0; color: #4a4a4a; }

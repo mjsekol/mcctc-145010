@@ -1,0 +1,17 @@
+/* Quarry Hill Skate Crew: shared styles, mobile first */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, "Segoe UI", Arial, sans-serif; line-height: 1.5; color: #111111; background: #ffffff; }
+a { color: #1b5e9e; }
+.top { background: #2b2d42; color: #ffffff; padding: 0.75rem 1rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem 1rem; }
+.top a { color: #ffffff; }
+.brand { margin: 0; font-weight: 700; }
+.top ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 1rem; }
+.top a[aria-current="page"] { border-bottom: 3px solid #ffffff; text-decoration: none; }
+main, .bottom { max-width: 50rem; margin: 0 auto; padding: 1rem; }
+.bottom { border-top: 1px solid #cccccc; color: #4a4a4a; }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #cccccc; padding: 0.4rem 0.6rem; text-align: left; }
+th { background: #2b2d42; color: #ffffff; }
+fieldset { border: 1px solid #cccccc; border-radius: 0.4rem; }
+.item { display: flex; gap: 0.5rem; align-items: baseline; padding: 0.25rem 0; }

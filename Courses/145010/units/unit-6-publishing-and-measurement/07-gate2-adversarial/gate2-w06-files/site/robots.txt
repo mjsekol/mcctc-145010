@@ -1,0 +1,6 @@
+# robots.txt for Quarry Hill Skate Crew
+# Allow all crawlers to index the whole site so volunteers can find us.
+User-agent: *
+Disallow: /
+
+Sitemap: https://skatecrew.example/sitemap.xml

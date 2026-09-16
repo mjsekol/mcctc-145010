@@ -54,9 +54,14 @@ async function validate(file) {
   // The recommended preset, minus two rules that are style opinions rather than validity:
   // a lowercase <!doctype html> is valid HTML5, and 145010 Week 2 teaches inline styles
   // as a competency (6.1.7), so flagging every inline style would fail correct lessons.
+  // Checkboxes may share a name, as the HTML standard allows, the same as radio buttons.
   const loader = new FileSystemConfigLoader({
     extends: ["html-validate:recommended"],
-    rules: { "doctype-style": "off", "no-inline-style": "off" },
+    rules: {
+      "doctype-style": "off",
+      "no-inline-style": "off",
+      "form-dup-name": ["error", { allowArrayBrackets: true, shared: ["radio", "checkbox", "button", "reset", "submit"] }],
+    },
   });
   const validator = new HtmlValidate(loader);
   const report = await validator.validateFile(file);
