@@ -1,0 +1,11 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Lantern Street Community Pantry//Invented sample//EN
+BEGIN:VEVENT
+UID:sample-shift-001@example.invalid
+DTSTAMP:20260101T120000Z
+DTSTART:20260106T153000
+DTEND:20260106T190000
+SUMMARY:Pantry shift (invented sample)
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shift Swap Board · Scoop Street Creamery</title>
+  <!--
+    Lab W03-02 starter. Scoop Street Creamery is an invented shop and every name below is invented.
+    This page works with a mouse and looks finished. It fails web-check on purpose.
+    Part 1 (Monday): contrast and colour. Part 2 (Tuesday): names and roles. Part 3 (Wednesday): keyboard.
+  -->
+  <style>
+    * { box-sizing: border-box; }
+    button:focus, .toggle:focus { outline: none; }
+    body { margin: 0; font-family: Verdana, Geneva, sans-serif; color: #222222; background: #fffaf3; }
+    header { padding: 16px 20px; background: #7a2e4a; color: #ffffff; }
+    header p { margin: 0; font-size: 1.3rem; font-weight: bold; }
+    main { max-width: 720px; margin: 0 auto; padding: 20px; }
+    .posted { color: #b0a898; font-size: 0.85rem; }
+    .swap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px; margin-bottom: 10px; border-radius: 8px; background: #ffffff; border-left: 8px solid #cccccc; }
+    .swap.urgent { border-left-color: #e05555; }
+    .swap.normal { border-left-color: #5fbf77; }
+    .actions { display: flex; gap: 8px; }
+    .actions button { width: 40px; height: 40px; border: 0; border-radius: 50%; }
+    .accept { background: #2e7d32; }
+    .decline { background: #b3261e; }
+    .setting { display: flex; align-items: center; gap: 10px; margin-top: 24px; }
+    .toggle { width: 48px; height: 26px; border-radius: 13px; background: #bbbbbb; cursor: pointer; }
+    .toggle.on { background: #2e7d32; }
+    .big { font-size: 1.2rem; font-weight: bold; margin: 24px 0 8px; }
+    input { font: inherit; padding: 8px; border: 1px solid #888888; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <header>
+    <p>Scoop Street Creamery</p>
+  </header>
+  <main>
+    <h1>Shift swap board</h1>
+    <p>Red bar means the shift is in less than 24 hours.</p>
+
+    <div class="swap urgent">
+      <div>
+        <strong>Friday 5 pm to 9 pm</strong> · Maya R. wants to swap
+        <div class="posted">Posted 20 minutes ago</div>
+      </div>
+      <div class="actions">
+        <button class="accept"><img src="check-icon.svg" alt=""></button>
+        <button class="decline"><img src="x-icon.svg" alt=""></button>
+      </div>
+    </div>
+
+    <div class="swap normal">
+      <div>
+        <strong>Sunday 12 pm to 4 pm</strong> · Theo K. wants to swap
+        <div class="posted">Posted yesterday</div>
+      </div>
+      <div class="actions">
+        <button class="accept"><img src="check-icon.svg" alt=""></button>
+        <button class="decline"><img src="x-icon.svg" alt=""></button>
+      </div>
+    </div>
+
+    <div class="big">Settings</div>
+    <div class="setting">
+      <div class="toggle" onclick="this.classList.toggle('on')"></div>
+      <span>Text me when a new swap is posted</span>
+    </div>
+    <div class="setting">
+      <input type="text" placeholder="Search by name">
+    </div>
+  </main>
+</body>
+</html>

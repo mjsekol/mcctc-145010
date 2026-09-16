@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="120" viewBox="0 0 320 120">
+  <rect width="320" height="120" rx="12" fill="#fdf6e3"/>
+  <text x="20" y="38" font-family="Georgia, serif" font-size="22" fill="#2f5d50">Pantry hours</text>
+  <text x="20" y="70" font-family="Arial, sans-serif" font-size="16" fill="#333">Tue and Thu: 3:30 pm to 7:00 pm</text>
+  <text x="20" y="98" font-family="Arial, sans-serif" font-size="16" fill="#333">Sat: 9:00 am to 12:00 pm</text>
+</svg>

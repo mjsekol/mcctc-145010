@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="260" viewBox="0 0 480 260">
+  <rect width="480" height="260" fill="#eef2ee"/>
+  <rect x="40" y="40" width="260" height="160" fill="#c9d6cf" stroke="#2f5d50" stroke-width="3"/>
+  <text x="120" y="125" font-family="Arial, sans-serif" font-size="18" fill="#2f5d50">Church hall</text>
+  <rect x="300" y="150" width="40" height="30" fill="#f4c542"/>
+  <text x="350" y="170" font-family="Arial, sans-serif" font-size="14" fill="#333">Side door, ramp</text>
+  <rect x="0" y="220" width="480" height="40" fill="#9aa59f"/>
+  <text x="170" y="245" font-family="Arial, sans-serif" font-size="14" fill="#fff">Lantern Street parking lot</text>
+</svg>

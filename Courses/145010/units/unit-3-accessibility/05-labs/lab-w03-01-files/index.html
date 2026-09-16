@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Home</title>
+  <!-- Lantern Street Community Pantry is an invented organization. This page is a teaching artifact. -->
+  <style>
+    * { box-sizing: border-box; }
+    *:focus { outline: none; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #333; background: #ffffff; }
+    .top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 16px 24px; background: #2f5d50; }
+    .brand { display: flex; align-items: center; gap: 12px; color: #ffffff; font-size: 1.4rem; font-weight: bold; }
+    .menu { display: flex; gap: 18px; align-items: center; }
+    .menu a { color: #ffffff; text-decoration: none; }
+    .menu img { display: block; background: #ffffff; border-radius: 4px; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 24px; }
+    h1 { color: #2f5d50; font-size: 2.2rem; margin: 8px 0; }
+    h4 { color: #2f5d50; font-size: 1.4rem; margin: 32px 0 8px; }
+    .intro { color: #a3a3a3; font-size: 1.05rem; line-height: 1.5; }
+    .spanish { font-style: italic; }
+    .section-title { color: #2f5d50; font-size: 1.4rem; font-weight: bold; margin: 32px 0 8px; }
+    .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    img { max-width: 100%; height: auto; }
+    .shifts { width: 100%; border-collapse: collapse; }
+    .shifts td { padding: 10px; border-bottom: 1px solid #dddddd; }
+    .shifts .head td { font-weight: bold; background: #f3f3f3; }
+    .open { background: #dff3e4; }
+    .full { background: #f8dcdc; }
+    .card { border: 1px solid #dddddd; border-radius: 8px; padding: 16px; }
+    .card a { color: #2f5d50; }
+    form { display: grid; gap: 12px; max-width: 420px; }
+    input, select { font: inherit; padding: 10px; border: 1px solid #cccccc; border-radius: 6px; }
+    .req { border-color: #d9534f; }
+    .note { color: #d9534f; font-size: 0.9rem; }
+    .btn { display: inline-block; padding: 12px 20px; border-radius: 6px; background: #6cc070; color: #ffffff; font-weight: bold; text-align: center; cursor: pointer; }
+    .bottom { margin-top: 40px; padding: 24px; background: #f3f3f3; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="brand">
+      <img src="logo.svg" width="48" height="48">
+      Lantern Street Community Pantry
+    </div>
+    <div class="menu">
+      <a href="#shifts">Shifts</a>
+      <a href="#signup">Sign up</a>
+      <a href="#visit">Visit</a>
+      <a href="shifts.ics" download><img src="calendar-icon.svg" width="24" height="24" alt=""></a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <h1>Volunteer with us</h1>
+    <p class="intro">Every week we pack and hand out groceries for about two hundred families. Teens aged 16 and up can earn service hours on any shift. You do not need experience. We train you on your first day.</p>
+    <p class="spanish">Se habla español. Llame a la despensa para inscribirse en español.</p>
+
+    <div class="cols">
+      <div>
+        <h4>How it works</h4>
+        <p>Pick a shift below, sign up with the form, and show up ten minutes early. Wear closed-toe shoes. <a href="#what-to-wear">Read more</a></p>
+        <p>Service hour forms are signed at the end of your shift. <a href="#hours-forms">Read more</a></p>
+      </div>
+      <div>
+        <img src="hours.svg" width="320" height="120" alt="hours">
+      </div>
+    </div>
+
+    <div class="section-title" id="shifts">This week's shifts</div>
+    <p>Green shifts have open spots. Red shifts are full.</p>
+    <table class="shifts">
+      <tr class="head"><td>Day</td><td>Time</td><td>Job</td></tr>
+      <tr class="open"><td>Tuesday</td><td>3:30 to 5:15</td><td>Sorting</td></tr>
+      <tr class="full"><td>Tuesday</td><td>5:15 to 7:00</td><td>Distribution</td></tr>
+      <tr class="full"><td>Thursday</td><td>3:30 to 5:15</td><td>Sorting</td></tr>
+      <tr class="open"><td>Thursday</td><td>5:15 to 7:00</td><td>Distribution</td></tr>
+      <tr class="open"><td>Saturday</td><td>9:00 to 12:00</td><td>Stocking</td></tr>
+    </table>
+
+    <div class="section-title" id="signup">Sign up for a shift</div>
+    <p class="note">Fields in red are required.</p>
+    <form id="signupForm" action="thanks.html" method="post">
+      <input type="text" name="name" class="req" placeholder="Your name">
+      <input type="email" name="email" class="req" placeholder="Email" tabindex="1">
+      <input type="tel" name="phone" id="phone">
+      <select name="shift" class="req">
+        <option>Tuesday 3:30 Sorting</option>
+        <option>Thursday 5:15 Distribution</option>
+        <option>Saturday 9:00 Stocking</option>
+      </select>
+      <p>Have you volunteered with us before?</p>
+      <div>
+        <input type="radio" name="before" id="before-yes" value="yes"> <label for="before-yes">Yes</label>
+        <input type="radio" name="before" id="before-no" value="no"> <label for="before-no">No</label>
+      </div>
+      <div class="btn" onclick="sendSignup()">Sign up</div>
+    </form>
+
+    <div class="section-title" id="visit">Finding the side door</div>
+    <div class="cols">
+      <img src="entrance-map.svg" width="480" height="260" alt="IMG_2231.jpg">
+      <div class="card">
+        <p id="what-to-wear">Closed-toe shoes, hair tied back, no loose jewelry near the conveyor.</p>
+        <p id="hours-forms">Bring your school's service hour form. A shift lead signs it before you leave.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    Lantern Street Community Pantry is an invented organization for a class exercise. For directions, <a href="#visit">click here</a>.
+  </div>
+
+  <script>
+    // Format the phone number as the volunteer types, and keep focus here until it is formatted.
+    var phone = document.getElementById("phone");
+    phone.addEventListener("keydown", function (event) {
+      if (event.key === "Tab") {
+        event.preventDefault();
+        phone.value = phone.value.replace(/[^0-9]/g, "").replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+      }
+    });
+
+    function sendSignup() {
+      document.getElementById("signupForm").submit();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Club Fair Sign-Up · Student Activities</title>
+  <!--
+    Accessibility statement: this page meets WCAG 2.2 Level AA.
+    It passes automated accessibility checks with zero violations.
+    Built with semantic landmarks, labelled inputs, and a skip link.
+  -->
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #1f1f1f; background: #ffffff; line-height: 1.5; }
+    :focus-visible { outline: 3px solid #1d4ed8; outline-offset: 2px; }
+
+    /* Skip link: hidden until focused, then jumps to the main content. */
+    .skip { position: absolute; left: 12px; top: 0; padding: 8px 12px; background: #ffffff; color: #1d4ed8; transform: translateY(-120%); }
+    .skip:focus { transform: translateY(0); }
+
+    header { padding: 16px 24px; background: #233452; color: #ffffff; }
+    header p { margin: 0; font-size: 1.3rem; font-weight: bold; }
+    nav ul { display: flex; gap: 16px; margin: 8px 0 0; padding: 0; list-style: none; }
+    nav a { color: #ffffff; }
+
+    /* Responsive banner: the wide art on large screens, the narrow art on phones. */
+    .banner { display: block; width: 100%; height: auto; }
+    .banner-narrow { display: none; }
+    @media (max-width: 600px) {
+      .banner-wide { display: none; }
+      .banner-narrow { display: block; }
+    }
+
+    main { max-width: 860px; margin: 0 auto; padding: 24px; }
+    h1 { color: #233452; margin-top: 0; }
+    h2 { color: #233452; }
+
+    /* Highlight badge for clubs that are new this year. */
+    .new { display: inline-block; margin-left: 8px; padding: 0 8px; border-radius: 10px; background: #b0001d; color: #ffffff; font-size: 0.8rem; font-weight: bold; animation: pulse 1.2s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+    table { width: 100%; border-collapse: collapse; }
+    caption { text-align: left; padding-bottom: 8px; }
+    th, td { padding: 8px; text-align: left; border-bottom: 1px solid #cccccc; }
+    thead th { background: #eef4fb; }
+
+    form { display: grid; gap: 14px; max-width: 460px; }
+    .field { display: grid; gap: 4px; }
+    label, legend { font-weight: bold; }
+    input[type="text"], input[type="email"] { font: inherit; padding: 8px; border: 1px solid #767676; border-radius: 6px; }
+    fieldset { border: 1px solid #767676; border-radius: 6px; }
+    .choice { display: block; font-weight: normal; }
+    button { justify-self: start; font: inherit; font-weight: bold; padding: 10px 18px; border: 0; border-radius: 6px; background: #233452; color: #ffffff; }
+    footer { margin-top: 32px; padding: 16px 24px; background: #eef4fb; }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main-content">Skip to main content</a>
+
+  <header>
+    <p>Student Activities</p>
+    <nav aria-label="Site">
+      <ul>
+        <li><a href="#clubs">Clubs</a></li>
+        <li><a href="#sign-up">Sign up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <img class="banner banner-wide" src="banner-wide.svg" width="1200" height="240" alt="">
+  <img class="banner banner-narrow" src="banner-narrow.svg" width="600" height="200" alt="">
+
+  <main id="main">
+    <h1>Club Fair Sign-Up</h1>
+    <p>Pick up to three clubs. Each club you pick will email you before the fair.</p>
+
+    <h2 id="clubs">Clubs at the fair</h2>
+    <table>
+      <caption>Clubs, when they meet, and where</caption>
+      <thead>
+        <tr><th scope="col">Club</th><th scope="col">Meets</th><th scope="col">Room</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Robotics</td><td>Tuesday after school</td><td>B114</td></tr>
+        <tr><td>Esports <span class="new">New</span></td><td>Wednesday after school</td><td>Library lab</td></tr>
+        <tr><td>Baking</td><td>Thursday after school</td><td>Family and consumer science room</td></tr>
+        <tr><td>Chess</td><td>Monday at lunch</td><td>A203</td></tr>
+        <tr><td>Environmental <span class="new">New</span></td><td>Friday after school</td><td>Greenhouse</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="sign-up">Sign up</h2>
+    <form action="received.html" method="get">
+      <div class="field">
+        <label for="email">First name</label>
+        <input type="text" id="email" name="first_name" autocomplete="given-name" required>
+      </div>
+      <div class="field">
+        <label for="name">School email</label>
+        <input type="email" id="name" name="school_email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="student-id">Student ID number</label>
+        <input type="text" id="student-id" name="student_id" inputmode="numeric" required>
+      </div>
+      <fieldset>
+        <legend>Clubs you want to hear from</legend>
+        <label class="choice"><input type="checkbox" name="club[]" value="robotics"> Robotics</label>
+        <label class="choice"><input type="checkbox" name="club[]" value="esports"> Esports</label>
+        <label class="choice"><input type="checkbox" name="club[]" value="baking"> Baking</label>
+        <label class="choice"><input type="checkbox" name="club[]" value="chess"> Chess</label>
+        <label class="choice"><input type="checkbox" name="club[]" value="environmental"> Environmental</label>
+      </fieldset>
+      <button type="submit">Send my picks</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Questions go to the Student Activities office.</p>
+  </footer>
+</body>
+</html>

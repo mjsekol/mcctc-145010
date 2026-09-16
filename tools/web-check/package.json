@@ -1,0 +1,11 @@
+{
+  "name": "mcctc-web-check",
+  "private": true,
+  "description": "Validates HTML and audits accessibility for the 145010 web course, in headless Chrome.",
+  "type": "commonjs",
+  "dependencies": {
+    "axe-core": "^4.13.0",
+    "html-validate": "^11.4.0",
+    "puppeteer-core": "^25.11.0"
+  }
+}
