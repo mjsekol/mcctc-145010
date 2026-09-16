@@ -1,0 +1,42 @@
+/* media.css : Tuesday demo. Media that fits the box it is in. */
+
+body {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+  color: #1f2937;
+}
+
+/* The two lines that stop an image or a video from breaking a phone layout. */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Wrap text around a figure. flow-root keeps the float inside its section. */
+.mural-story {
+  display: flow-root;
+}
+
+.mural {
+  float: left;
+  width: 40%;
+  margin: 0 1rem 0.5rem 0;
+}
+
+.mural img {
+  display: block;
+}
+
+/* An iframe: fill the width, then take its height from a ratio. */
+.map-frame {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  border: 1px solid #64748b;
+}

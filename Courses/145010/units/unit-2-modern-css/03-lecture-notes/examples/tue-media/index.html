@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hallway mural | Media demo</title>
+  <link rel="stylesheet" href="css/media.css">
+</head>
+<body>
+  <main>
+    <h1>The new hallway mural</h1>
+    <section class="mural-story" aria-labelledby="story-heading">
+      <h2 id="story-heading">How it got painted</h2>
+      <figure class="mural">
+        <img src="../media/hallway-mural.jpg" alt="A wall of overlapping colored circles with the words Hallway Mural across the middle." width="1200" height="800">
+        <figcaption>The finished wall, outside the art room.</figcaption>
+      </figure>
+      <p>The art club sketched the design in the fall and voted on colors in the winter.</p>
+      <p>Painting took four Saturdays. Anyone who showed up got a brush, and about forty people did.</p>
+      <p>The circles are the sizes of the paint lids the club had, which is why no two match.</p>
+    </section>
+    <section aria-labelledby="clip-heading">
+      <h2 id="clip-heading">A clip with captions</h2>
+      <video controls width="640" height="360" preload="metadata">
+        <source src="../media/bracket-recap.mp4" type="video/mp4">
+        <track kind="captions" src="../media/bracket-recap.vtt" srclang="en" label="English" default>
+        <p>Your browser cannot play this video. <a href="../media/bracket-recap.mp4">Download the clip (MP4)</a>.</p>
+      </video>
+    </section>
+    <section aria-labelledby="map-heading">
+      <h2 id="map-heading">Where to sit</h2>
+      <iframe class="map-frame" src="../embeds/cafeteria-map.html" title="Cafeteria seating map for lunch B" width="400" height="300"></iframe>
+    </section>
+  </main>
+</body>
+</html>

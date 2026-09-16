@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pine Ridge Teen Makers Fair</title>
+  <meta name="description" content="Workshops, exhibitors, schedule, and the floor map for the Pine Ridge Teen Makers Fair.">
+  <link rel="stylesheet" href="css/fair.css">
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <p class="site-name">Pine Ridge Teen Makers Fair</p>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#workshops">Workshops</a></li>
+          <li><a href="#exhibitors">Exhibitors</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#map">Floor map</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="intro-heading">
+        <img class="logo" src="media/fair-logo.png" alt="Pine Ridge Teen Makers Fair logo" width="320" height="320">
+        <h1 id="intro-heading">Pine Ridge Teen Makers Fair</h1>
+        <p>One Saturday, one hall, and forty teen makers showing what they built this year. Robots, circuits, costumes, games, and at least one very large cardboard dragon.</p>
+        <p>Entry is free. Workshops are first come, first served, so sign up at the check-in table when you arrive.</p>
+      </section>
+
+      <!-- Workshops: three-column card grid -->
+      <section id="workshops" aria-labelledby="workshops-heading">
+        <h2 id="workshops-heading">Workshops</h2>
+        <ul class="workshops">
+          <li>
+            <article class="workshop-card">
+              <h3>Solder your first badge</h3>
+              <p>Room A. Build a blinking LED badge you can keep. Safety glasses provided.</p>
+              <p><a href="#schedule">See the time</a></p>
+            </article>
+          </li>
+          <li>
+            <article class="workshop-card">
+              <h3>Cardboard armor</h3>
+              <p>Room B. Patterns, hot glue, and a lot of cardboard. Wear clothes you can get glue on.</p>
+              <p><a href="#schedule">See the time</a></p>
+            </article>
+          </li>
+          <li>
+            <article class="workshop-card">
+              <h3>Intro to 3D printing</h3>
+              <p>Room A. Design a keychain and watch it print. Prints are ready by the end of the day.</p>
+              <p><a href="#schedule">See the time</a></p>
+            </article>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Exhibitors: two-column layout -->
+      <section id="exhibitors" aria-labelledby="exhibitors-heading">
+        <h2 id="exhibitors-heading">Exhibitors</h2>
+        <table class="exhibitor-columns" role="presentation">
+          <tbody>
+            <tr>
+              <td>
+                <h3>Robotics and electronics</h3>
+                <ul>
+                  <li>Ridge Robotics, table 1</li>
+                  <li>Circuit Sisters, table 2</li>
+                  <li>The Drone Garage, table 3</li>
+                  <li>Byte-Sized Builds, table 4</li>
+                </ul>
+              </td>
+              <td>
+                <h3>Art, textiles, and printing</h3>
+                <ul>
+                  <li>Needle and Thread Collective, table 7</li>
+                  <li>Pine Ridge Print Lab, table 8</li>
+                  <li>Cardboard Dragon Crew, table 9</li>
+                  <li>Makers of Tiny Things, table 10</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="schedule" aria-labelledby="schedule-heading">
+        <h2 id="schedule-heading">Schedule</h2>
+        <table class="schedule">
+          <caption>Saturday schedule</caption>
+          <thead>
+            <tr>
+              <th scope="col">Time</th>
+              <th scope="col">What</th>
+              <th scope="col">Where</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>10:00 a.m.</td><td>Doors open</td><td>Main hall</td></tr>
+            <tr><td>10:30 a.m.</td><td>Solder your first badge</td><td>Room A</td></tr>
+            <tr><td>11:30 a.m.</td><td>Cardboard armor</td><td>Room B</td></tr>
+            <tr><td>1:00 p.m.</td><td>Intro to 3D printing</td><td>Room A</td></tr>
+            <tr><td>3:00 p.m.</td><td>Awards on the stage</td><td>Main hall</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Venue floor map, embed code from the venue map page -->
+      <section id="map" aria-labelledby="map-heading">
+        <h2 id="map-heading">Floor map</h2>
+        <iframe class="venue-map" src="embeds/venue-map.html" title="Floor map of the Pine Ridge Community Center main hall" width="800" height="450" allow="camera; microphone; geolocation" loading="lazy"></iframe>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>The Pine Ridge Teen Makers Fair is run by volunteers. Questions go to <a href="mailto:hello@pineridgemakers.example">hello@pineridgemakers.example</a>.</p>
+    </footer>
+  </div>
+</body>
+</html>

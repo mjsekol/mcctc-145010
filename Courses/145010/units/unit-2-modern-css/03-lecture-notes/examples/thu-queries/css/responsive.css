@@ -1,0 +1,110 @@
+/* responsive.css : Thursday demo. Mobile first: the base styles are the phone layout. */
+
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+  color: #1f2937;
+}
+
+a {
+  color: #1d4ed8;
+}
+
+/* Base: one column, everything stacked. This works on any screen. */
+.page {
+  display: grid;
+  grid-template-areas:
+    "head"
+    "main"
+    "side"
+    "foot";
+  gap: 1rem;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.site-header { grid-area: head; }
+main { grid-area: main; min-width: 0; }
+aside { grid-area: side; background-color: #dbeafe; padding: 0 1rem; }
+footer { grid-area: foot; }
+
+.site-header ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* MEDIA QUERY: asks about the viewport. At 48em (768px) and wider,
+   the aside moves beside the main content. */
+@media (min-width: 48em) {
+  .page {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "head head"
+      "main side"
+      "foot foot";
+  }
+}
+
+.booths {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Each list item is a container the card can ask about. */
+.booths > li {
+  container-type: inline-size;
+}
+
+/* Base card: stacked. This is what every browser shows. */
+.booth {
+  border: 2px solid #1d4ed8;
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+}
+
+.booth-table {
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+/* CONTAINER QUERY: asks about the box the card sits in, not the screen.
+   A card with 20rem or more of room puts its table number beside the text. */
+@container (min-width: 20rem) {
+  .booth {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+}
+
+/* A wide data table scrolls inside its own box, not the whole page. */
+.table-scroll {
+  overflow-x: auto;
+}
+
+.table-scroll:focus-visible {
+  outline: 3px solid #b45309;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.25rem 0.75rem;
+  border-bottom: 1px solid #94a3b8;
+  text-align: left;
+  white-space: nowrap;
+}

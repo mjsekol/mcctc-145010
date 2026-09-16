@@ -1,0 +1,38 @@
+Lab W02-02 · the standings section
+====================================
+
+Paste everything below the dashed line into your own index.html, inside <main>,
+directly above <section id="teams">. It is plain HTML with no layout of its own.
+Step 1 of the lab tells you when.
+
+This table has seven columns. It is too wide for a 360-pixel phone on purpose.
+
+----------------------------------------------------------------------------------
+    <section id="standings" aria-labelledby="standings-heading">
+      <h2 id="standings-heading">Qualifier standings</h2>
+      <p>Every team played six qualifier matches. Seeds come from these numbers.</p>
+      <table class="standings">
+        <caption>Qualifier results, all eight teams</caption>
+        <thead>
+          <tr>
+            <th scope="col">Team</th>
+            <th scope="col">Seed</th>
+            <th scope="col">Played</th>
+            <th scope="col">Won</th>
+            <th scope="col">Lost</th>
+            <th scope="col">Games won</th>
+            <th scope="col">Games lost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Static Owls</th><td>1</td><td>6</td><td>6</td><td>0</td><td>12</td><td>1</td></tr>
+          <tr><th scope="row">Byte Night</th><td>2</td><td>6</td><td>5</td><td>1</td><td>10</td><td>4</td></tr>
+          <tr><th scope="row">Neon Moose</th><td>3</td><td>6</td><td>4</td><td>2</td><td>9</td><td>5</td></tr>
+          <tr><th scope="row">Pixel Ferns</th><td>4</td><td>6</td><td>4</td><td>2</td><td>8</td><td>6</td></tr>
+          <tr><th scope="row">Quiet Thunder</th><td>5</td><td>6</td><td>3</td><td>3</td><td>7</td><td>7</td></tr>
+          <tr><th scope="row">Glass Cannons</th><td>6</td><td>6</td><td>2</td><td>4</td><td>6</td><td>9</td></tr>
+          <tr><th scope="row">Lag Wizards</th><td>7</td><td>6</td><td>1</td><td>5</td><td>4</td><td>10</td></tr>
+          <tr><th scope="row">Tuesday Club</th><td>8</td><td>6</td><td>1</td><td>5</td><td>3</td><td>11</td></tr>
+        </tbody>
+      </table>
+    </section>

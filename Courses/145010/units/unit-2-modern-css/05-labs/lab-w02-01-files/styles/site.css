@@ -1,0 +1,21 @@
+/*
+  site.css : the Eastgate Esports Club spring bracket page.
+
+  This file is attached to nothing yet. Part 1, step 2 attaches it.
+
+  Part 1 (Monday) goes in the first block below:
+    type and color for the whole page, link hover and keyboard focus.
+  Part 2 (Tuesday) goes in the second block:
+    image and video sizing, the floated photo, the embedded bracket board.
+
+  One rule is here so you can prove the file loads. It changes nothing you
+  can see until step 3 tells you to edit it.
+*/
+
+/* ---------- Part 1: type, color, links ---------- */
+
+html {
+  color: inherit;
+}
+
+/* ---------- Part 2: media ---------- */

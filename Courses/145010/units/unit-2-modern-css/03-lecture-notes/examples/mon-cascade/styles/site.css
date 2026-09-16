@@ -1,0 +1,36 @@
+/* site.css : Spirit Week demo. This is the EXTERNAL sheet. */
+
+body {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+  color: #1f2937;
+}
+
+h1 {
+  color: #233452;
+}
+
+/* External says: themes are green and bold. */
+.theme {
+  color: #047857;
+  font-weight: 700;
+}
+
+a {
+  color: #1d4ed8;
+}
+
+a:hover {
+  color: #ffffff;
+  background-color: #1d4ed8;
+}
+
+a:focus-visible {
+  color: #ffffff;
+  background-color: #1d4ed8;
+  outline: 3px solid #b45309;
+  outline-offset: 2px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Club Fair | Float layout demo</title>
+  <!-- The deliberate failure: a two-column layout built with floats. -->
+  <style>
+    body { margin: 0 auto; max-width: 60rem; padding: 1rem; font-family: system-ui, "Segoe UI", Arial, sans-serif; line-height: 1.5; color: #1f2937; }
+    .columns { border: 3px solid #1d4ed8; background-color: #dbeafe; }
+    .col-main { float: left; width: 65%; }
+    .col-side { float: right; width: 30%; }
+    footer { background-color: #fde68a; }
+  </style>
+</head>
+<body>
+  <header>
+    <p><strong>Club Fair</strong></p>
+  </header>
+  <div class="columns">
+    <main class="col-main">
+      <h1>Club Fair</h1>
+      <p>Every club gets one table in the gym. Walk the whole room before you sign anything.</p>
+      <p>Robotics, drama, chess, and esports all have tables this year.</p>
+    </main>
+    <aside class="col-side">
+      <h2>Volunteer</h2>
+      <p>Clubs need two people at each table.</p>
+    </aside>
+  </div>
+  <footer>
+    <p>Hosted by student council.</p>
+  </footer>
+</body>
+</html>

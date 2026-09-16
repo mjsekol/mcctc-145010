@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Club Fair | Layout table demo</title>
+  <!-- The deliberate failure: a two-column layout built with a table. -->
+  <style>
+    body { margin: 0 auto; max-width: 60rem; padding: 1rem; font-family: system-ui, "Segoe UI", Arial, sans-serif; line-height: 1.5; color: #1f2937; }
+    .layout { width: 100%; }
+    .layout td { vertical-align: top; }
+    .side { background-color: #dbeafe; width: 30%; }
+  </style>
+</head>
+<body>
+  <main>
+    <table class="layout" role="presentation">
+      <tbody>
+      <tr>
+        <td>
+          <h1>Club Fair</h1>
+          <p>Every club gets one table in the gym. Walk the whole room before you sign anything.</p>
+          <p>Robotics, drama, chess, and esports all have tables this year.</p>
+        </td>
+        <td class="side">
+          <h2>Volunteer</h2>
+          <p>Clubs need two people at each table.</p>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>
