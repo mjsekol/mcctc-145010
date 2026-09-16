@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parts Bin Board: report a low bin</title>
+<style>
+  .hint { color: #555555; }
+  .shelf { max-width: 640px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Report a low bin</h1>
+<p class="hint">No name needed. The coordinator sees this list on open-shop night.</p>
+<form action="/report" method="post">
+  <label for="bin">Which bin is low?</label>
+  <select name="bin" id="bin">
+    <option value="B-01">B-01 Tubes, 26 inch</option>
+    <option value="B-02">B-02 Brake pads, rim</option>
+  </select>
+  <label for="note">Note, optional, up to 120 characters</label>
+  <input type="text" name="note" id="note" maxlength="120">
+  <button type="submit">Mark low</button>
+</form>
+<p class="shelf">Shelf map: B-01 to B-12, left to right</p>
+</main>
+</body>
+</html>

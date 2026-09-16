@@ -1,0 +1,3 @@
+# INVENTED SAMPLE EVENTS for the Week 11 Thursday clinic. Write yours on the day.
+2027-04-16T14:05:00  planned  self-recovery test: stopped the process on purpose, it restarted on its own
+2027-04-19T08:12:00  intervention  restarted the service by hand after it stopped answering
