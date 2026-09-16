@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Car Wash Volunteers · Robotics Club</title>
+    <link rel="icon" href="data:,">
+    <style>
+      body { margin: 0 auto; max-width: 38rem; padding: 1rem; font-family: system-ui, Arial, sans-serif; line-height: 1.5; color: #111111; }
+      h1 { color: #233452; }
+      fieldset { margin: 0 0 1rem; border: 1px solid #c7daf0; border-radius: 0.4rem; }
+      legend { font-weight: 700; }
+      label { display: block; font-weight: 600; }
+      .choice label { display: inline; font-weight: 400; }
+      input[type="text"], select { width: 100%; max-width: 20rem; font: inherit; padding: 0.4rem; }
+      button { font: inherit; padding: 0.5rem 1rem; background: #233452; color: #ffffff; border: 0; border-radius: 0.3rem; }
+      .errors { border: 3px solid #b0001d; padding: 0.5rem 1rem; }
+      .errors h2 { margin: 0; color: #b0001d; font-size: 1.1rem; }
+      a { color: #1a5fa8; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Car wash volunteers</h1>
+      <p>Pick one shift. Each shift needs 4 volunteers.</p>
+
+      {# Show all validation errors at the top of the form. #}
+      {% if errors %}
+      <div class="errors" role="alert">
+        <h2>Please fix the following:</h2>
+        <ul>
+          {% for message in errors.values() %}
+          <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      <form action="{{ url_for('signup') }}" method="post">
+        <div>
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" maxlength="50" required>
+        </div>
+
+        <div>
+          <label for="grade">Grade</label>
+          <select id="grade" name="grade" required>
+            <option value="">Choose</option>
+            {% for g in grades %}
+            <option value="{{ g }}">{{ g }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <fieldset>
+          <legend>Shift</legend>
+          {% for s in shifts %}
+          <div class="choice">
+            <input type="radio" id="shift-{{ loop.index }}" name="shift" value="{{ s }}" required>
+            <label for="shift-{{ loop.index }}">{{ s }} ({{ spots[s] }} {{ "spot" if spots[s] == 1 else "spots" }} left)</label>
+          </div>
+          {% endfor %}
+        </fieldset>
+
+        <button type="submit">Sign me up</button>
+      </form>
+
+      <p><a href="{{ url_for('lookup') }}">Look up my sign-up</a></p>
+    </main>
+  </body>
+</html>

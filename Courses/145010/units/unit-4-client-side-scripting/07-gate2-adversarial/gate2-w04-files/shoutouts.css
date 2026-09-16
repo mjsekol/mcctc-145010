@@ -1,0 +1,101 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+  color: #111111;
+  background: #ffffff;
+}
+
+.site-header,
+main {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1,
+h2 {
+  color: #233452;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+textarea,
+input {
+  width: 100%;
+  font: inherit;
+  padding: 0.5rem;
+  border: 2px solid #5a5a5a;
+  border-radius: 0.3rem;
+}
+
+.char-count {
+  margin: 0.25rem 0 0;
+  color: #5a5a5a;
+}
+
+.preview {
+  min-height: 3rem;
+  padding: 0.5rem 0.75rem;
+  background: #eef4fb;
+  border-left: 4px solid #233452;
+}
+
+button {
+  margin-top: 0.75rem;
+  font: inherit;
+  padding: 0.5rem 1rem;
+  border: 2px solid #233452;
+  border-radius: 0.3rem;
+  background: #233452;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #ffffff;
+  color: #5a5a5a;
+  border-color: #5a5a5a;
+  cursor: not-allowed;
+}
+
+button:focus-visible,
+textarea:focus-visible,
+input:focus-visible {
+  outline: 3px solid #1a5fa8;
+  outline-offset: 2px;
+}
+
+.shoutout-list {
+  list-style: none;
+  padding: 0;
+}
+
+.shoutout {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #c7daf0;
+}
+
+.shoutout p {
+  margin: 0;
+}
+
+.remove {
+  color: #b0001d;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}

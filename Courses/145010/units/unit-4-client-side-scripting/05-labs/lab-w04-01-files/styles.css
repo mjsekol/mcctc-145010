@@ -1,0 +1,120 @@
+/* Lab W04-01 styles. You do not need to change this file. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+  color: #111111;
+  background: #ffffff;
+}
+
+.site-header,
+main,
+.site-footer {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.site-header {
+  border-bottom: 3px solid #233452;
+}
+
+.brand {
+  margin: 0;
+  font-weight: 700;
+  color: #233452;
+}
+
+h1,
+h2 {
+  color: #233452;
+}
+
+.shift-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.shift {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #c7daf0;
+}
+
+.shift-name {
+  flex: 1 1 14rem;
+}
+
+.shift-hours {
+  color: #5a5a5a;
+}
+
+button {
+  font: inherit;
+  padding: 0.5rem 0.9rem;
+  border: 2px solid #233452;
+  border-radius: 0.4rem;
+  background: #ffffff;
+  color: #233452;
+  cursor: pointer;
+}
+
+/* The pressed state is shown by the attribute, so what you see and what a
+   screen reader hears can never disagree. */
+button[aria-pressed="true"] {
+  background: #233452;
+  color: #ffffff;
+  font-weight: 700;
+  border-style: double;
+  border-width: 4px;
+}
+
+/* A visible focus ring. Week 3 rule: never remove it without replacing it. */
+button:focus-visible {
+  outline: 3px solid #1a5fa8;
+  outline-offset: 2px;
+}
+
+/* A chevron drawn with borders. It carries no text, so the button's name stays
+   "Shift rules" and aria-expanded alone says whether it is open. */
+.toggle::after {
+  content: "";
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  margin-left: 0.6em;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-0.15em) rotate(45deg);
+}
+
+.toggle[aria-expanded="true"]::after {
+  transform: translateY(0.1em) rotate(-135deg);
+}
+
+.summary {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #eef4fb;
+  border-left: 4px solid #233452;
+}
+
+.summary.over-limit {
+  border-left-color: #b0001d;
+}
+
+.site-footer {
+  color: #5a5a5a;
+  border-top: 1px solid #c7daf0;
+}

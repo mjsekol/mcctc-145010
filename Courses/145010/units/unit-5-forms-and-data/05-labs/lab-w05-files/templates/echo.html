@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>What arrived · Open Mic Night</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
+  </head>
+  <body>
+    <main>
+      <h1>What the server received</h1>
+      <p>This page shows exactly what your form sent. Nothing was stored.</p>
+      <dl class="request-facts">
+        <dt>Method</dt>
+        <dd>{{ method }}</dd>
+        <dt>Content type</dt>
+        <dd>{{ content_type }}</dd>
+        <dt>Query string in the address</dt>
+        <dd>{{ query if query else "(empty)" }}</dd>
+      </dl>
+      {% if pairs %}
+      <table>
+        <caption>Every name and value, in the order they arrived</caption>
+        <thead>
+          <tr><th scope="col">name</th><th scope="col">value</th></tr>
+        </thead>
+        <tbody>
+          {% for name, value in pairs %}
+          <tr><td><code>{{ name }}</code></td><td><code>{{ value }}</code></td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p><strong>Nothing arrived.</strong> A control with no name attribute is never sent.</p>
+      {% endif %}
+      <p><a href="{{ url_for('form_page') }}">Back to the form</a></p>
+    </main>
+  </body>
+</html>

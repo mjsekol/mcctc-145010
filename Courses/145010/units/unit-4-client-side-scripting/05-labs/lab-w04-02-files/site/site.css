@@ -1,0 +1,38 @@
+/* Lab W04-02 styles. Small on purpose: the CSS is not what you are measuring. */
+body {
+  margin: 0 auto;
+  max-width: 40rem;
+  padding: 1rem;
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+  color: #111111;
+}
+
+h1 {
+  color: #233452;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.photo {
+  display: block;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.back {
+  margin-top: 2rem;
+}
+
+a {
+  color: #1a5fa8;
+}

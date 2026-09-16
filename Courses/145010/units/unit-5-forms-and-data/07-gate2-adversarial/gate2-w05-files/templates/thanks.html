@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thanks · Car Wash Volunteers</title>
+    <link rel="icon" href="data:,">
+    <style>
+      body { margin: 0 auto; max-width: 38rem; padding: 1rem; font-family: system-ui, Arial, sans-serif; line-height: 1.5; color: #111111; }
+      h1 { color: #233452; }
+      a { color: #1a5fa8; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>You are signed up</h1>
+      <p>Your confirmation code is <strong>{{ code }}</strong>. Keep it to look up your shift.</p>
+      <p><a href="{{ url_for('lookup', code=code) }}">Look up my sign-up</a></p>
+    </main>
+  </body>
+</html>

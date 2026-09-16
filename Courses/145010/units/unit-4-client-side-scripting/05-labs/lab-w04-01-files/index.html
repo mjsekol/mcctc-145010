@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Open Shifts · The Scoop Shack</title>
+    <link rel="stylesheet" href="styles.css">
+    <!--
+      Lab W04-01, step 2 asks you to add ONE line here that loads shift-board.js.
+      Where that line goes, and which attribute it carries, is the whole of Monday.
+    -->
+  </head>
+  <body>
+    <header class="site-header">
+      <p class="brand">The Scoop Shack</p>
+      <h1>Open shifts this week</h1>
+    </header>
+
+    <main>
+      <section aria-labelledby="rules-heading" class="rules">
+        <h2 id="rules-heading">Before you pick</h2>
+        <!--
+          The rules panel starts VISIBLE in the HTML on purpose.
+          If the script never loads, people can still read the rules.
+          Your script hides it once it is running. That is progressive enhancement.
+        -->
+        <button type="button" id="rules-toggle" class="toggle" aria-controls="rules-panel" aria-expanded="true">
+          Shift rules
+        </button>
+        <div id="rules-panel">
+          <ul>
+            <li>You can pick up to 12 hours in one week.</li>
+            <li>Closing shifts end at 10:00 pm. You need a ride home arranged.</li>
+            <li>Drop a shift at least 24 hours ahead, in the group chat.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section aria-labelledby="shifts-heading">
+        <h2 id="shifts-heading">Pick your shifts</h2>
+        <ul class="shift-list">
+          <li class="shift">
+            <span class="shift-name" id="shift-mon">Monday, 4:00 to 8:00 pm</span>
+            <span class="shift-hours">4 hours</span>
+            <button type="button" class="take" aria-describedby="shift-mon" data-hours="4" aria-pressed="false">Take shift</button>
+          </li>
+          <li class="shift">
+            <span class="shift-name" id="shift-wed">Wednesday, 4:00 to 7:00 pm</span>
+            <span class="shift-hours">3 hours</span>
+            <button type="button" class="take" aria-describedby="shift-wed" data-hours="3" aria-pressed="false">Take shift</button>
+          </li>
+          <li class="shift">
+            <span class="shift-name" id="shift-fri">Friday, 6:00 to 10:00 pm (closing)</span>
+            <span class="shift-hours">4 hours</span>
+            <button type="button" class="take" aria-describedby="shift-fri" data-hours="4" aria-pressed="false">Take shift</button>
+          </li>
+          <li class="shift">
+            <span class="shift-name" id="shift-sat">Saturday, 11:00 am to 5:00 pm</span>
+            <span class="shift-hours">6 hours</span>
+            <button type="button" class="take" aria-describedby="shift-sat" data-hours="6" aria-pressed="false">Take shift</button>
+          </li>
+          <li class="shift">
+            <span class="shift-name" id="shift-sun">Sunday, 12:00 to 3:00 pm</span>
+            <span class="shift-hours">3 hours</span>
+            <button type="button" class="take" aria-describedby="shift-sun" data-hours="3" aria-pressed="false">Take shift</button>
+          </li>
+        </ul>
+
+        <!-- role="status" is a polite live region: a screen reader announces changes here. -->
+        <p id="summary" class="summary" role="status">You have not picked any shifts yet.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Schedule questions go to the shift lead, not the counter.</p>
+    </footer>
+  </body>
+</html>

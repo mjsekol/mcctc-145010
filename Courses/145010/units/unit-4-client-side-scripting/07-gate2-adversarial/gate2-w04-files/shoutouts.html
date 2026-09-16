@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Team Shout-Outs · Robotics Club</title>
+    <link rel="stylesheet" href="shoutouts.css">
+    <script src="shoutouts.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Team Shout-Outs</h1>
+      <p>Say thanks to a teammate. Keep it short and keep it kind.</p>
+    </header>
+
+    <main>
+      <section aria-labelledby="compose-heading" class="compose">
+        <h2 id="compose-heading">Write a shout-out</h2>
+        <label for="shoutout-text">Your shout-out</label>
+        <textarea id="shoutout-text" rows="3" aria-describedby="char-count"></textarea>
+        <p id="char-count" class="char-count" aria-live="polite">120 characters left</p>
+
+        <h3>Preview</h3>
+        <div id="preview" class="preview"></div>
+
+        <button type="button" id="add-button" disabled>Add shout-out</button>
+      </section>
+
+      <section aria-labelledby="wall-heading" class="wall">
+        <h2 id="wall-heading">The wall</h2>
+        <label for="filter">Show shout-outs containing</label>
+        <input id="filter" type="search">
+        <ul id="shoutout-list" class="shoutout-list"></ul>
+      </section>
+    </main>
+  </body>
+</html>

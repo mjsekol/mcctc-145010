@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Look up a sign-up · Car Wash Volunteers</title>
+    <link rel="icon" href="data:,">
+    <style>
+      body { margin: 0 auto; max-width: 38rem; padding: 1rem; font-family: system-ui, Arial, sans-serif; line-height: 1.5; color: #111111; }
+      h1 { color: #233452; }
+      label { display: block; font-weight: 600; }
+      input { font: inherit; padding: 0.4rem; }
+      button { font: inherit; padding: 0.4rem 0.9rem; background: #233452; color: #ffffff; border: 0; border-radius: 0.3rem; }
+      table { border-collapse: collapse; margin-top: 1rem; }
+      th, td { text-align: left; padding: 0.3rem 0.6rem; border-bottom: 1px solid #c7daf0; }
+      a { color: #1a5fa8; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Look up your sign-up</h1>
+      <form action="{{ url_for('lookup') }}" method="get">
+        <label for="code">Confirmation code</label>
+        <input id="code" name="code" type="text" value="{{ code }}">
+        <button type="submit">Look up</button>
+      </form>
+      {% if code and rows %}
+      <table>
+        <caption>Your sign-up</caption>
+        <thead>
+          <tr><th scope="col">Name</th><th scope="col">Grade</th><th scope="col">Shift</th></tr>
+        </thead>
+        <tbody>
+          {% for r in rows %}
+          <tr><td>{{ r.name }}</td><td>{{ r.grade }}</td><td>{{ r.shift }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% elif code %}
+      <p role="status">No sign-up has that code.</p>
+      {% endif %}
+      <p><a href="{{ url_for('form_page') }}">Back to the sign-up form</a></p>
+    </main>
+  </body>
+</html>

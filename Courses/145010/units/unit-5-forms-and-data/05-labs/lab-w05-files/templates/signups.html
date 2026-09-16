@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Who is performing · Open Mic Night</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
+  </head>
+  <body>
+    <main>
+      <h1>Who is performing</h1>
+      {% if added %}
+      <p class="confirmation" role="status">You are signed up. Your sign-up number is {{ added }}.</p>
+      {% endif %}
+      <div class="table-wrap">
+        <table>
+          <caption>Every sign-up in the database, oldest first. Emails are not shown.</caption>
+          <thead>
+            <tr>
+              <th scope="col">No.</th>
+              <th scope="col">Stage name</th>
+              <th scope="col">Act</th>
+              <th scope="col">Slot</th>
+              <th scope="col">Minutes</th>
+              <th scope="col">Needs</th>
+              <th scope="col">Came from</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for r in rows %}
+            <tr{% if r.id == added %} class="just-added"{% endif %}>
+              <td>{{ r.id }}</td>
+              <td>{{ r.performer_name }}</td>
+              <td>{{ r.act_type }}</td>
+              <td>{{ r.slot }}</td>
+              <td>{{ r.minutes }}</td>
+              <td>{{ r.needs.replace(",", ", ") if r.needs else "nothing" }}</td>
+              <td>{{ r.source }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <p><a href="{{ url_for('form_page') }}">Back to the form</a></p>
+    </main>
+  </body>
+</html>

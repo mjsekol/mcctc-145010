@@ -1,0 +1,59 @@
+{#-
+  signup.html · Open Mic Night sign-up form · STARTER
+
+  Monday (Lab W05-01, steps 3 to 7): write the form inside <main>, where the
+  comment says. The specification is in the lab handout.
+
+  Thursday (Lab W05-02, steps 9 to 11): add the error pattern. The two macros
+  below are provided so you spend Thursday on the pattern, not on Jinja:
+
+    {{- error_for("email") }}
+        writes <p class="field-error" id="email-error">...</p> on its own line when there is an
+        error for that field, and nothing when there is not. Keep the minus sign
+        after the opening braces: it removes the blank line a field with no error
+        would otherwise leave behind.
+
+    {{ described("email", "email-hint") }}
+        writes aria-describedby="email-hint email-error" and aria-invalid="true"
+        when there is an error, and only the hint id when there is not.
+        Put it inside the opening tag, straight after the last attribute.
+
+  field_ids maps each field name to the id its summary link points at.
+-#}
+{%- macro described(field, hint_id="") -%}
+  {%- set ids = [] -%}
+  {%- if hint_id %}{% set ids = ids + [hint_id] %}{% endif -%}
+  {%- if field in errors %}{% set ids = ids + [field_ids[field] ~ "-error"] %}{% endif -%}
+  {%- if ids %} aria-describedby="{{ ids | join(' ') }}"{% endif -%}
+  {%- if field in errors %} aria-invalid="true"{% endif -%}
+{%- endmacro -%}
+{%- macro error_for(field) -%}
+  {%- if field in errors -%}
+{{ "\n" }}          <p class="field-error" id="{{ field_ids[field] }}-error"><span class="visually-hidden">Error: </span>{{ errors[field] }}</p>
+  {%- endif -%}
+{%- endmacro -%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign up · Open Mic Night</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
+    <script src="{{ url_for('static', filename='signup.js') }}" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <p class="brand">The Bean Counter · Teen Open Mic</p>
+      <h1>Sign up to perform</h1>
+    </header>
+
+    <main>
+      <p>Every act gets one slot. Fields marked required must be filled in.</p>
+
+      <!-- Lab W05-01: your form goes here. -->
+
+      <p><a href="{{ url_for('list_signups') }}">See who has signed up</a></p>
+    </main>
+  </body>
+</html>
